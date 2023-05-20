@@ -46,3 +46,16 @@ CREATE TABLE step(
 	PRIMARY KEY (step_id),
 	FOREIGN KEY (project_id) REFERENCES project (project_id) ON DELETE CASCADE
 );
+
+// adding data
+
+insert into project  (project_name, estimated_hours, actual_hours, difficulty, notes) values ('hang door', 3, 3, 3, 'about as expected');
+insert into material (project_id, material_name, num_required, cost) values (1, 'Door hangers', 9, 27.99);
+insert into material (project_id, material_name, num_required, cost) values (1, 'screws', 20, 4.50);
+insert into step (project_id, step_text, step_order) values (1, 'align hangers on opening side of door', 1);
+insert into step (project_id, step_text, step_order) values (1, 'screw hangers into frame', 2);
+insert into category (category_id, category_name) values (1, 'Doors and windows');
+insert into category (category_id, category_name) values (2, 'Repairs');
+insert into category (category_id, category_name) values (3, 'Gardening');
+insert into project_category (project_id, category_id) values (1,1);
+insert into project_category (project_id, category_id) values (1,2);
